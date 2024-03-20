@@ -33,7 +33,7 @@ return (
   <Navbar expand="lg" className={scrolled?"scrolled":""}>
     <Container>
       <Navbar.Brand href="#home"
-      img src={ghost} alt="logo">React-Bootstrap</Navbar.Brand>
+      img src={ghost} alt="logo">LOGO</Navbar.Brand>
       <Navbar.Toggle aria-controls="basic-navbar-nav">
         <span className="navbar-toggler-icon"></span>
       </Navbar.Toggle>
@@ -49,7 +49,7 @@ return (
             <a href="#"><img src={facebook} alt="" /></a>
             <a href="#"><img src={linkedin} alt="" /></a>
           </div>
-          <button className="" onClick={()=> console.log("connect")}><span>Lets connect</span></button>
+          <button className="xyz" onClick={()=> console.log("connect")}><span>Lets connect</span></button>
         </span>
       </Navbar.Collapse>
     </Container>
