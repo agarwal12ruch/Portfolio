@@ -1,21 +1,22 @@
 import {Container,Row,Col} from "react-bootstrap";
 import {ArrowRightCircle} from "react-bootstrap-icons";
-import headerimg from "../assets/img/headerimg.svg"
+import mypic1 from "../assets/img/mypic1.png"
 import { useState,useEffect } from "react";
 
 export const Banner=()=>{
     const torotate=["Web Developer","Web Designer","Student"];
     const [loopnum,setloopnum]=useState(0);
     const [isdeleting,setisdeleting]=useState(false);
-    const [delta,setdelta]=useState(300-Math.random()*100); //how fast each word is appearing after another
-    const period=2000;
+    const [delta,setdelta]=useState(150-Math.random()*100); //how fast each word is appearing after another
+    const period=1000;
     const [text,settext]=useState("");
     useEffect(()=>{
         let ticker=setInterval(()=>{
             tick();
-        },delta)
+        },delta);
         return ()=> {clearInterval(ticker)};
-    },[text])
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    },[text,delta]);
 
     const tick=()=>{
         let i=loopnum % torotate.length; //to go back to the first element
@@ -33,7 +34,7 @@ export const Banner=()=>{
         else if(isdeleting && updatedtext=== ''){
             setisdeleting(false);
             setloopnum(loopnum+1);
-            setdelta(500) ;
+            setdelta(300) ;
         }
     }
     return(
@@ -43,15 +44,16 @@ export const Banner=()=>{
                     <Col xs={12} md={6} xl={5}>
                         <span className="tagline">Welcome to my Portfolio</span>
                         <h1>{`Hi I'm Ruchita Agarwal `}<span className="wrap">{text}</span></h1>
-                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sit minima eaque aliquid, consequatur magni nesciunt. Non quisquam saepe excepturi minus esse.
+                        
                             <button onClick={()=>console.log('connect')}>Lets Connect <ArrowRightCircle color="royalblue" size={25} /></button>
-                        </p>
+                    
                     </Col>
-                    <Col xs={12} md={6} xl={5}>
-                        <img src={headerimg} alt="headerimage" />
+                    <Col xs={10} md={6} xl={5}>
+                        <img src={mypic1} alt="headerimage" />
                     </Col>
                 </Row>
             </Container>
         </section>
     )
 }
+export default Banner
