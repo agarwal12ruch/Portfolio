@@ -3,6 +3,7 @@ import mac_portfolio from "../assets/img/mac_portfolio.png";
 import mac_portfolio_1 from "../assets/img/mac_portfolio_1.png";
 import mac_portfolio_3 from "../assets/img/mac_portfolio_3.png";
 
+import '../App.css';
 export const Project = () => {
     // State to track the hovered state for each card
     const [hoveredIndex, setHoveredIndex] = useState(null);
@@ -31,9 +32,8 @@ export const Project = () => {
     return (
         <>
             <figure className="text-center"><h1 className="main-heading">My <span className="heading">Projects</span></h1></figure>
-
             <div className="container my-3">
-            <figure className="text-center"><h5>Here are the projects I've worked on.</h5></figure>
+            
                 <div className="row">
                     {projects.map((project, index) => (
                         <div 

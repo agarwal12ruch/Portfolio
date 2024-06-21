@@ -11,6 +11,7 @@ import {
   Switch,
   Route,
 } from "react-router-dom";
+import About from './components/About';
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
       <div className="App">
         <Switch>
           <Route exact path="/" component={Banner} />
+          <Route exact path="/about" component={About} />
           <Route path="/projects" component={Project} />
           <Route path="/resume" component={Resume} />
         </Switch>

@@ -44,17 +44,19 @@ return (
 
 <Nav className="me-auto">
   <Nav.Link as={Link} to="/" className={activelink==='home'?'active navbar-link':'navbar-link'} onClick={()=> onupdateactivelink('home')}>Home</Nav.Link>
+  <Nav.Link as={Link} to="/about" className={activelink==='About'?'active navbar-link':'navbar-link'} onClick={()=> onupdateactivelink('About')}>About</Nav.Link>
   <Nav.Link as={Link} to="/projects" className={activelink==='Projects'?'active navbar-link':'navbar-link'} onClick={()=> onupdateactivelink('Projects')}>Projects</Nav.Link>
   <Nav.Link as={Link} to="/resume" className={activelink==='Resume'?'active navbar-link':'navbar-link'} onClick={()=> onupdateactivelink('Resume')}>Resume</Nav.Link>
+ 
 </Nav>
 
         <span className="navbar-text">
           <div className="social-icon">
-            <a href="#"><img src={instagram}  /></a>
-            <a href="#"><img src={facebook}  /></a>
+            <a href="/"><img src={instagram}  /></a>
+            <a href="/"><img src={facebook}  /></a>
             <a href="https://www.linkedin.com/in/ruchita-agarwal-7b1067266/"><img src={linkedin} alt="linkedin" /></a>
           </div>
-          <button className="xyz" onClick={()=> console.log("connect")}><span>Lets connect</span></button>
+          
         </span>
       </Navbar.Collapse>
     </Container>
